@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Store | Alibra - Footwear, Men & Women</title>
+  <meta name="description" content="Browse the complete Alibra collection: Footwear, Men's and Women's premium apparel. Delivered across Kenya.">
+  <link rel="icon" type="image/png" href="images/brand/images (4).jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-paper font-sans text-ink antialiased">
+
+  <!-- TOP PROMO BAR -->
+  <div class="bg-ink py-2 text-center text-xs font-semibold uppercase tracking-wider text-paper">
+    <span>Free delivery in Nairobi on orders over KES 10,000 &bull; Same-day dispatch</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-md">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="flex h-16 items-center justify-between md:h-20">
+        <!-- Brand -->
+        <a href="Index.html" class="flex items-center gap-3 text-2xl font-extrabold uppercase tracking-[0.3em]">
+          <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-9 w-9 rounded-full object-cover ring-1 ring-line md:h-10 md:w-10">
+          <span>Alibra</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden items-center gap-8 text-xs font-semibold uppercase tracking-wider md:flex">
+          <a href="Index.html" class="hover:text-accent">Home</a>
+          <a href="#footwear" class="hover:text-accent">Footwear</a>
+          <a href="#men" class="hover:text-accent">Men</a>
+          <a href="#women" class="hover:text-accent">Women</a>
+          <a href="Index.html#contact" class="hover:text-accent">Contact</a>
+        </nav>
+
+        <!-- Right Action: Bag, Theme Switcher & WhatsApp Direct -->
+        <div class="hidden items-center gap-3 md:flex">
+          <!-- Shopping Bag Trigger -->
+          <button id="cart-btn" aria-label="Open Shopping Bag"
+                  class="relative flex items-center gap-1.5 border border-line bg-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-ink transition-colors hover:border-ink hover:text-accent">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span>Bag</span>
+            <span id="cart-badge" class="cart-badge hidden ml-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-accent px-1 text-[9px] font-bold text-paper">0</span>
+          </button>
+
+          <div class="theme-switcher" aria-label="Theme selector">
+            <button data-set-theme="default" class="theme-btn active" title="Classic Theme">Classic</button>
+            <button data-set-theme="pink" class="theme-btn" title="Pink Blush Theme">Pink</button>
+            <button data-set-theme="dark" class="theme-btn" title="Dark Noir Theme">Dark</button>
+          </div>
+
+          <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Alibra%2C%20I%20have%20an%20order%20inquiry"
+             target="_blank" rel="noopener noreferrer"
+             class="flex items-center gap-2 bg-accent px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .14 5.36.14 11.94c0 2.1.55 4.15 1.6 5.96L.04 24l6.25-1.64a11.93 11.93 0 0 0 5.78 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.87 9.87 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.45 9.9-9.92 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+
+        <!-- Mobile Header Controls -->
+        <div class="flex items-center gap-3 md:hidden">
+          <button class="mobile-cart-btn relative flex items-center p-2 text-ink" aria-label="Open Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="mobile-cart-badge cart-badge hidden absolute -top-1 -right-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-accent px-1 text-[9px] font-bold text-paper">0</span>
+          </button>
+          <button id="menu-btn" aria-label="Open menu" aria-expanded="false">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <nav id="mobile-menu" class="hidden border-t border-line px-5 py-4 text-xs font-semibold uppercase tracking-wider md:hidden">
+      <!-- Mobile Theme Selector -->
+      <div class="mb-3 flex items-center justify-between border-b border-line pb-3">
+        <span class="text-[11px] font-bold uppercase text-muted">Theme:</span>
+        <div class="theme-switcher">
+          <button data-set-theme="default" class="theme-btn active">Classic</button>
+          <button data-set-theme="pink" class="theme-btn">Pink</button>
+          <button data-set-theme="dark" class="theme-btn">Dark</button>
+        </div>
+      </div>
+      <a href="Index.html" class="block py-3 hover:text-accent">Home</a>
+      <a href="#footwear" class="block py-3 hover:text-accent">Footwear</a>
+      <a href="#men" class="block py-3 hover:text-accent">Men</a>
+      <a href="#women" class="block py-3 hover:text-accent">Women</a>
+      <a href="Index.html#contact" class="block py-3 hover:text-accent">Contact</a>
+      <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Alibra%2C%20I%20have%20an%20order%20inquiry"
+         target="_blank" rel="noopener noreferrer"
+         class="mt-3 block bg-accent py-3 text-center text-paper">Order on WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- STORE HEADER BANNER -->
+    <section class="border-b border-black/10 bg-accent py-14 text-paper md:py-20">
+      <div class="mx-auto max-w-6xl px-5 text-center">
+        <span class="inline-block rounded-full bg-paper/20 px-4 py-1 text-xs font-bold uppercase tracking-[0.3em] text-paper">The Official Collection</span>
+        <h1 class="mt-3 text-3xl font-extrabold uppercase tracking-tight md:text-5xl text-paper">Store & Catalog</h1>
+        <p class="mx-auto mt-3 max-w-xl text-sm text-paper/90 md:text-base">
+          Browse our handpicked apparel and footwear. Every piece is quality checked and ready for nationwide delivery.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEARCH & FILTER TOOLBAR -->
+    <section class="sticky top-16 z-30 border-b border-line bg-paper/95 py-4 backdrop-blur-md md:top-20">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+
+          <!-- Search Bar -->
+          <div class="relative flex-1 max-w-md">
+            <span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-muted">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </span>
+            <input type="text" id="search-input"
+                   placeholder="Search footwear, jackets, dresses, sneakers..."
+                   class="w-full border border-line bg-soft py-2.5 pl-10 pr-10 text-sm font-medium placeholder:text-muted focus:border-ink focus:bg-paper focus:outline-none">
+            <button id="search-clear" class="absolute inset-y-0 right-0 hidden items-center pr-3 text-muted hover:text-ink" aria-label="Clear search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+
+          <!-- Category Filter Pills & Sort -->
+          <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider">
+            <button data-filter="all" class="filter-btn active rounded-none border border-accent bg-accent px-4 py-2 text-paper transition-colors">
+              All
+            </button>
+            <button data-filter="footwear" class="filter-btn rounded-none border border-line bg-paper px-4 py-2 text-ink hover:border-ink transition-colors">
+              Footwear
+            </button>
+            <button data-filter="men" class="filter-btn rounded-none border border-line bg-paper px-4 py-2 text-ink hover:border-ink transition-colors">
+              Men
+            </button>
+            <button data-filter="women" class="filter-btn rounded-none border border-line bg-paper px-4 py-2 text-ink hover:border-ink transition-colors">
+              Women
+            </button>
+
+            <!-- Sort dropdown -->
+            <select id="sort-select" class="ml-auto border border-line bg-paper px-3 py-2 text-xs font-semibold uppercase tracking-wider text-ink focus:border-ink focus:outline-none md:ml-2">
+              <option value="default">Sort by</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Alphabetical</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Live Status Bar -->
+        <div class="mt-3 flex items-center justify-between text-xs text-muted">
+          <span id="results-count">Showing all products</span>
+          <span id="active-filter-label" class="font-semibold uppercase text-accent">All Categories</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORE CONTENT CONTAINER -->
+    <div id="catalog-container" class="mx-auto max-w-6xl px-5 py-12">
+
+      <!-- ============================================== -->
+      <!-- SECTION: FOOTWEAR -->
+      <!-- ============================================== -->
+      <section id="footwear" class="category-section mb-16" data-category="footwear">
+        <div class="mb-6 flex items-baseline justify-between border-b border-line pb-3">
+          <div>
+            <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Footwear</h2>
+            <p class="mt-1 text-xs font-medium uppercase tracking-wider text-muted">Runners, Retro Trainers, Boots & Heels</p>
+          </div>
+          <span class="category-badge text-xs font-bold text-accent">6 items</span>
+        </div>
+
+        <div class="product-grid grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3">
+
+          <!-- Shoe 1 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Minimalist White Runners" data-price="4500" data-category="footwear" data-tags="shoes sneaker white athletic trainers running"
+               data-img="images/images.jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images.jpg" alt="Minimalist White Runners" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Minimalist White Runners</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 4,500</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Shoe 2 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Retro Cream & Suede Low-Tops" data-price="3800" data-category="footwear" data-tags="shoes sneaker beige suede retro low-top cream"
+               data-img="images/images%20(1).jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(1).jpg" alt="Retro Cream & Suede Low-Tops" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Retro Cream & Suede Low-Tops</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 3,800</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Shoe 3 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Heritage Tricolor Street Runners" data-price="4200" data-category="footwear" data-tags="shoes sneaker tricolor green red suede runners vintage"
+               data-img="images/images%20(2).jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(2).jpg" alt="Heritage Tricolor Street Runners" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Heritage Tricolor Street Runners</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 4,200</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Shoe 4 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Crimson Canvas Low-Tops" data-price="2800" data-category="footwear" data-tags="shoes sneaker red canvas casual low-top converse style"
+               data-img="images/images%20(3).jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(3).jpg" alt="Crimson Canvas Low-Tops" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Crimson Canvas Low-Tops</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 2,800</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Shoe 5 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Urban Sport Street Sneaker" data-price="3900" data-category="footwear" data-tags="shoes sneaker black white skate street"
+               data-img="images/shopping.webp">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-white flex items-center justify-center p-4">
+                <img src="images/shopping.webp" alt="Urban Sport Street Sneaker" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Urban Sport Street Sneaker</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 3,900</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Shoe 6 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="All-Weather Waterproof Boots" data-price="4900" data-category="footwear" data-tags="shoes boots black waterproof rubber leather rain"
+               data-img="images/anaterate-rubber-boots-2547214_1920.png">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-white flex items-center justify-center p-4">
+                <img src="images/anaterate-rubber-boots-2547214_1920.png" alt="All-Weather Waterproof Boots" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">All-Weather Waterproof Boots</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 4,900</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ============================================== -->
+      <!-- SECTION: MEN -->
+      <!-- ============================================== -->
+      <section id="men" class="category-section mb-16" data-category="men">
+        <div class="mb-6 flex items-baseline justify-between border-b border-line pb-3">
+          <div>
+            <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Men</h2>
+            <p class="mt-1 text-xs font-medium uppercase tracking-wider text-muted">Jackets, Outerwear & Street Casuals</p>
+          </div>
+          <span class="category-badge text-xs font-bold text-accent">4 items</span>
+        </div>
+
+        <div class="product-grid grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3">
+
+          <!-- Men 1 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Textured Tailored Tweed Jacket" data-price="5500" data-category="men" data-tags="men jacket coat tweed textured wool winter blazers outerwear"
+               data-img="images/engin_akyurt-jacket-4792225.jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/engin_akyurt-jacket-4792225.jpg" alt="Textured Tailored Tweed Jacket" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Men's Outerwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Textured Tailored Tweed Jacket</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 5,500</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Men 2 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Classic Black Moto Leather Jacket" data-price="6800" data-category="men" data-tags="men jacket leather biker moto black coat outerwear"
+               data-img="images/download%20(1).webp">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/download%20(1).webp" alt="Classic Black Moto Leather Jacket" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Men's Outerwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Classic Black Moto Leather Jacket</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 6,800</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Men 3 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Navy Sport Runner Sneakers" data-price="3600" data-category="men" data-tags="men shoes sneaker navy blue sport runners athletic"
+               data-img="images/images%20(4).jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(4).jpg" alt="Navy Sport Runner Sneakers" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Men's Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Navy Sport Runner Sneakers</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 3,600</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Men 4 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Bold Red & Black Athletic Runner" data-price="4400" data-category="men" data-tags="men shoes sneaker red black athletic runner air"
+               data-img="images/download.webp">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-white flex items-center justify-center p-4">
+                <img src="images/download.webp" alt="Bold Red & Black Athletic Runner" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Men's Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Bold Red & Black Athletic Runner</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 4,400</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ============================================== -->
+      <!-- SECTION: WOMEN -->
+      <!-- ============================================== -->
+      <section id="women" class="category-section mb-16" data-category="women">
+        <div class="mb-6 flex items-baseline justify-between border-b border-line pb-3">
+          <div>
+            <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Women</h2>
+            <p class="mt-1 text-xs font-medium uppercase tracking-wider text-muted">Dresses, Jumpsuits & Elegant Heels</p>
+          </div>
+          <span class="category-badge text-xs font-bold text-accent">5 items</span>
+        </div>
+
+        <div class="product-grid grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3">
+
+          <!-- Women 1 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Burgundy Ribbed Midi Dress" data-price="3200" data-category="women" data-tags="women dress burgundy ribbed midi belted knit buttons"
+               data-img="images/download%20(3).webp">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/download%20(3).webp" alt="Burgundy Ribbed Midi Dress" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Women's Dresses</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Burgundy Ribbed Midi Dress</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 3,200</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Women 2 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Chocolate Textured Wide-Leg Jumpsuit" data-price="3500" data-category="women" data-tags="women jumpsuit brown chocolate wide leg casual textured"
+               data-img="images/download%20(2).webp">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/download%20(2).webp" alt="Chocolate Textured Wide-Leg Jumpsuit" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Women's Jumpsuits</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Chocolate Textured Wide-Leg Jumpsuit</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 3,500</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Women 3 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Fuchsia Twist-Waist Midi Dress" data-price="2950" data-category="women" data-tags="women dress pink fuchsia twist waist midi casual formal"
+               data-img="images/download%20(4).webp">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/download%20(4).webp" alt="Fuchsia Twist-Waist Midi Dress" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Women's Dresses</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Fuchsia Twist-Waist Midi Dress</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 2,950</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Women 4 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Terracotta Belted Shirt Dress" data-price="3400" data-category="women" data-tags="women dress orange terracotta belted shirt dress midi classy"
+               data-img="images/images%20(5).jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(5).jpg" alt="Terracotta Belted Shirt Dress" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Women's Dresses</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Terracotta Belted Shirt Dress</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 3,400</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <!-- Women 5 -->
+          <div class="store-item group flex flex-col justify-between"
+               data-name="Classic Noir Stiletto High Heels" data-price="4800" data-category="women" data-tags="women shoes heels stilettos black pointed footwear formal party"
+               data-img="images/pexels-mahsima-10827097.jpg">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/pexels-mahsima-10827097.jpg" alt="Classic Noir Stiletto High Heels" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <span class="mt-2 inline-block text-[10px] font-bold uppercase tracking-widest text-accent">Women's Footwear</span>
+              <h3 class="product-name text-sm font-semibold group-hover:text-accent">Classic Noir Stiletto High Heels</h3>
+              <p class="product-price text-sm font-bold text-ink">KES 4,800</p>
+            </div>
+            <button type="button" class="quick-order-btn mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors hover:bg-ink">
+              Order on WhatsApp
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- NO RESULTS NOTIFICATION -->
+      <div id="no-results" class="hidden py-16 text-center">
+        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-soft text-muted">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3 class="mt-4 text-lg font-bold uppercase">No products found</h3>
+        <p class="mt-2 text-sm text-muted">We couldn't find any items matching your search. Try different keywords or reset your filters.</p>
+        <button id="reset-filter-btn" class="mt-5 inline-block bg-accent px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-paper hover:bg-ink">
+          View All Products
+        </button>
+      </div>
+
+    </div>
+
+    <!-- WHATSAPP CUSTOM ASSISTANCE BANNER -->
+    <section class="border-t border-line bg-soft py-14">
+      <div class="mx-auto max-w-6xl px-5 text-center">
+        <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Looking for a specific size or style?</h2>
+        <p class="mx-auto mt-3 max-w-lg text-sm text-muted">
+          Can't find what you're looking for? Message our team directly on WhatsApp with a screenshot or request, and we'll check our back stock for you.
+        </p>
+        <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Alibra%2C%20I%20am%20looking%20for%20a%20specific%20item"
+           target="_blank" rel="noopener noreferrer"
+           class="mt-6 inline-flex items-center gap-2 bg-accent px-8 py-3 text-xs font-semibold uppercase tracking-wider text-paper hover:bg-ink">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .14 5.36.14 11.94c0 2.1.55 4.15 1.6 5.96L.04 24l6.25-1.64a11.93 11.93 0 0 0 5.78 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.87 9.87 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.45 9.9-9.92 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+          Chat with a Stylist on WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-gray-dark text-paper">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-10 w-10 rounded-full object-cover ring-1 ring-white/20">
+          <p class="text-xl font-extrabold uppercase tracking-[0.3em]">Alibra</p>
+        </div>
+        <p class="mt-3 max-w-xs text-sm text-gray-light">Premium clothing and footwear, delivered across Kenya.</p>
+      </div>
+      <div class="text-sm">
+        <p class="font-bold uppercase">Store Categories</p>
+        <ul class="mt-3 space-y-2 text-gray-light">
+          <li><a href="#footwear" class="hover:text-paper">Footwear & Sneakers</a></li>
+          <li><a href="#men" class="hover:text-paper">Men's Collection</a></li>
+          <li><a href="#women" class="hover:text-paper">Women's Collection</a></li>
+          <li><a href="Index.html" class="hover:text-paper">Home Page</a></li>
+        </ul>
+      </div>
+      <div class="text-sm">
+        <p class="font-bold uppercase">Follow & Contact</p>
+        <a href="https://www.instagram.com/alibra_collections/" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center gap-2 text-gray-light hover:text-paper">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram (@alibra_collections)
+        </a>
+        <a href="https://www.tiktok.com/@alibracollections" target="_blank" rel="noopener noreferrer" class="mt-2 flex items-center gap-2 text-gray-light hover:text-paper">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.2a5.2 5.2 0 0 1-3.2-4.4V1h-3.7v15.3a3.1 3.1 0 1 1-2.7-3.1v-3.8a7 7 0 1 0 6.4 6.9V8.5a8.8 8.8 0 0 0 5.1 1.6V6.4a5.3 5.3 0 0 1-1.9-.2Z"/></svg>
+          TikTok (@alibracollections)
+        </a>
+        <p class="mt-3 text-xs text-gray-light">WhatsApp: +254 XXX XXX XXX</p>
+      </div>
+    </div>
+    <p class="border-t border-white/15 py-5 text-center text-xs text-gray-light">&copy; 2026 Alibra. All rights reserved.</p>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="whatsapp-btn" href="https://wa.me/254XXXXXXXXX?text=Hello%20Alibra%2C%20I%20have%20an%20order%20inquiry"
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+     class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110">
+    <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .14 5.36.14 11.94c0 2.1.55 4.15 1.6 5.96L.04 24l6.25-1.64a11.93 11.93 0 0 0 5.78 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.87 9.87 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.45 9.9-9.92 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
+    </svg>
+  </a>
+
+  <!-- QUICK VIEW & ORDER MODAL -->
+  <div id="quick-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div class="relative w-full max-w-2xl border border-line bg-paper shadow-2xl md:grid md:grid-cols-2">
+      <!-- Close button -->
+      <button id="modal-close" class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-paper/80 text-ink hover:bg-ink hover:text-paper" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Modal Image -->
+      <div class="aspect-square bg-soft md:aspect-[3/4]">
+        <img id="modal-img" src="" alt="Product" class="h-full w-full object-cover">
+      </div>
+
+      <!-- Modal Details -->
+      <div class="flex flex-col justify-between p-6">
+        <div>
+          <span id="modal-category" class="text-[10px] font-bold uppercase tracking-widest text-accent">Category</span>
+          <h3 id="modal-name" class="mt-1 text-xl font-extrabold uppercase">Product Name</h3>
+          <p id="modal-price" class="mt-2 text-lg font-extrabold text-accent">KES 0,000</p>
+          <div class="mt-2 flex items-center gap-2 text-xs font-semibold text-emerald-600">
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-600"></span>
+            In Stock &bull; Ready to ship
+          </div>
+
+          <!-- Size Selector -->
+          <div class="mt-5">
+            <label class="block text-xs font-bold uppercase tracking-wider text-muted">Select Size:</label>
+            <div id="modal-sizes" class="mt-2 flex flex-wrap gap-2">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Action -->
+        <div class="mt-6">
+          <a id="modal-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer"
+             class="flex w-full items-center justify-center gap-2 bg-[#25D366] py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#128C7E]">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .14 5.36.14 11.94c0 2.1.55 4.15 1.6 5.96L.04 24l6.25-1.64a11.93 11.93 0 0 0 5.78 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.87 9.87 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.45 9.9-9.92 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+            Complete Order on WhatsApp
+          </a>
+          <p class="mt-2 text-center text-[11px] text-muted">Instant response &bull; M-Pesa or Card accepted</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT FOR LIVE SEARCH, FILTERING, SORTING & MODAL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const searchClear = document.getElementById('search-clear');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const sortSelect = document.getElementById('sort-select');
+      const resultsCount = document.getElementById('results-count');
+      const activeFilterLabel = document.getElementById('active-filter-label');
+      const noResults = document.getElementById('no-results');
+      const sections = document.querySelectorAll('.category-section');
+      const allItems = Array.from(document.querySelectorAll('.store-item'));
+
+      // Mobile Menu
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const open = mobileMenu.classList.toggle('hidden') === false;
+          menuBtn.setAttribute('aria-expanded', String(open));
+        });
+      }
+
+      let currentFilter = 'all';
+      let currentQuery = '';
+
+      // Live Search & Filter Function
+      function applyFilter() {
+        let visibleCount = 0;
+        const query = currentQuery.trim().toLowerCase();
+
+        sections.forEach(section => {
+          const sectionCategory = section.getAttribute('data-category');
+          const sectionItems = Array.from(section.querySelectorAll('.store-item'));
+          let sectionVisibleCount = 0;
+
+          // Check if category matches
+          const categoryMatches = (currentFilter === 'all' || currentFilter === sectionCategory);
+
+          sectionItems.forEach(item => {
+            const name = (item.getAttribute('data-name') || '').toLowerCase();
+            const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+            const itemCat = (item.getAttribute('data-category') || '').toLowerCase();
+
+            const textMatches = !query || name.includes(query) || tags.includes(query) || itemCat.includes(query);
+
+            if (categoryMatches && textMatches) {
+              item.classList.remove('hidden');
+              sectionVisibleCount++;
+              visibleCount++;
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+
+          // Show/hide entire category section based on whether it has visible items
+          if (sectionVisibleCount > 0) {
+            section.classList.remove('hidden');
+            const badge = section.querySelector('.category-badge');
+            if (badge) badge.textContent = `${sectionVisibleCount} ${sectionVisibleCount === 1 ? 'item' : 'items'}`;
+          } else {
+            section.classList.add('hidden');
+          }
+        });
+
+        // Update counts & status
+        resultsCount.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? 'product' : 'products'}`;
+        activeFilterLabel.textContent = currentFilter === 'all' ? 'All Categories' : currentFilter.toUpperCase();
+
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+
+      // Filter button click
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-paper', 'border-accent', 'active');
+            b.classList.add('bg-paper', 'text-ink', 'border-line');
+          });
+          btn.classList.add('bg-accent', 'text-paper', 'border-accent', 'active');
+          btn.classList.remove('bg-paper', 'text-ink', 'border-line');
+
+          currentFilter = btn.getAttribute('data-filter');
+          applyFilter();
+        });
+      });
+
+      // Search input event
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        if (currentQuery.length > 0) {
+          searchClear.classList.remove('hidden');
+          searchClear.classList.add('flex');
+        } else {
+          searchClear.classList.add('hidden');
+          searchClear.classList.remove('flex');
+        }
+        applyFilter();
+      });
+
+      // Clear search button
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        currentQuery = '';
+        searchClear.classList.add('hidden');
+        searchClear.classList.remove('flex');
+        applyFilter();
+        searchInput.focus();
+      });
+
+      // Reset filter button
+      const resetBtn = document.getElementById('reset-filter-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          currentQuery = '';
+          searchClear.classList.add('hidden');
+          searchClear.classList.remove('flex');
+          const allBtn = document.querySelector('[data-filter="all"]');
+          if (allBtn) allBtn.click();
+        });
+      }
+
+      // Sorting
+      sortSelect.addEventListener('change', () => {
+        const val = sortSelect.value;
+        sections.forEach(section => {
+          const grid = section.querySelector('.product-grid');
+          const items = Array.from(grid.querySelectorAll('.store-item'));
+
+          items.sort((a, b) => {
+            const priceA = parseFloat(a.getAttribute('data-price')) || 0;
+            const priceB = parseFloat(b.getAttribute('data-price')) || 0;
+            const nameA = (a.getAttribute('data-name') || '').toLowerCase();
+            const nameB = (b.getAttribute('data-name') || '').toLowerCase();
+
+            if (val === 'price-asc') return priceA - priceB;
+            if (val === 'price-desc') return priceB - priceA;
+            if (val === 'name-asc') return nameA.localeCompare(nameB);
+            return 0;
+          });
+
+          items.forEach(item => grid.appendChild(item));
+        });
+      });
+
+      // Check URL hash for direct category navigation (e.g., store.html#women)
+      if (window.location.hash) {
+        const hashCategory = window.location.hash.replace('#', '').toLowerCase();
+        const targetBtn = document.querySelector(`[data-filter="${hashCategory}"]`);
+        if (targetBtn) {
+          targetBtn.click();
+        }
+      }
+
+      // ==============================================
+      // QUICK-VIEW / WHATSAPP ORDER MODAL
+      // ==============================================
+      const modal = document.getElementById('quick-modal');
+      const modalClose = document.getElementById('modal-close');
+      const modalImg = document.getElementById('modal-img');
+      const modalName = document.getElementById('modal-name');
+      const modalPrice = document.getElementById('modal-price');
+      const modalCategory = document.getElementById('modal-category');
+      const modalSizes = document.getElementById('modal-sizes');
+      const modalWhatsAppLink = document.getElementById('modal-whatsapp-link');
+
+      const whatsappNumber = '254XXXXXXXXX'; // Replace with real business number
+
+      let activeProduct = null;
+      let activeSize = '';
+
+      function openModal(item) {
+        const name = item.getAttribute('data-name');
+        const price = item.getAttribute('data-price');
+        const img = item.getAttribute('data-img');
+        const category = item.getAttribute('data-category');
+
+        activeProduct = { name, price, category };
+
+        modalName.textContent = name;
+        modalPrice.textContent = `KES ${Number(price).toLocaleString()}`;
+        modalCategory.textContent = category.toUpperCase();
+        modalImg.src = img;
+
+        // Populate sizes depending on category
+        modalSizes.innerHTML = '';
+        let sizes = [];
+        if (category === 'footwear') {
+          sizes = ['38', '39', '40', '41', '42', '43', '44'];
+        } else {
+          sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+        }
+
+        activeSize = sizes[0];
+
+        sizes.forEach((s, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = s;
+          btn.className = `size-btn border px-3 py-1.5 text-xs font-bold uppercase transition-colors ${idx === 0 ? 'bg-ink text-paper border-ink' : 'border-line text-ink hover:border-ink'}`;
+          btn.addEventListener('click', () => {
+            modalSizes.querySelectorAll('.size-btn').forEach(b => {
+              b.className = 'size-btn border border-line text-ink px-3 py-1.5 text-xs font-bold uppercase hover:border-ink transition-colors';
+            });
+            btn.className = 'size-btn border border-ink bg-ink text-paper px-3 py-1.5 text-xs font-bold uppercase transition-colors';
+            activeSize = s;
+            updateWhatsAppLink();
+          });
+          modalSizes.appendChild(btn);
+        });
+
+        updateWhatsAppLink();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function updateWhatsAppLink() {
+        if (!activeProduct) return;
+        const msg = `Hello Alibra! I would like to order:\n- Item: ${activeProduct.name}\n- Category: ${activeProduct.category.toUpperCase()}\n- Size: ${activeSize}\n- Price: KES ${Number(activeProduct.price).toLocaleString()}\n\nIs this piece currently available for delivery?`;
+        modalWhatsAppLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      // Attach to all order buttons and card items
+      document.querySelectorAll('.quick-order-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const item = btn.closest('.store-item');
+          if (item) openModal(item);
+        });
+      });
+
+      // Clicking product images/titles also triggers quick modal
+      document.querySelectorAll('.store-item').forEach(item => {
+        const clickable = item.querySelector('div:first-child');
+        if (clickable) {
+          clickable.classList.add('cursor-pointer');
+          clickable.addEventListener('click', () => openModal(item));
+        }
+      });
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+
+    });
+  </script>
+
+  <!-- CHATBOT CONTAINER -->
+  <div id="chatbot"></div>
+
+</body>
+</html>

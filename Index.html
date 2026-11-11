@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alibra | Premium clothing and shoes</title>
+  <meta name="description" content="Premium clothing and footwear, delivered across Kenya.">
+<link rel="icon" type="image/png" href="images/brand/images (4).jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-paper font-sans text-ink antialiased">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="sticky top-0 z-40 border-b border-line bg-paper">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="flex h-16 items-center justify-between md:h-20 md:justify-center">
+        <a href="#hero" class="flex items-center gap-3 text-2xl font-extrabold uppercase tracking-[0.3em]">
+          <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-9 w-9 rounded-full object-cover ring-1 ring-line md:h-10 md:w-10">
+          <span>Alibra</span>
+        </a>
+        <div class="flex items-center gap-3 md:hidden">
+          <button class="mobile-cart-btn relative flex items-center p-2 text-ink" aria-label="Open Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="mobile-cart-badge cart-badge hidden absolute -top-1 -right-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-accent px-1 text-[9px] font-bold text-paper">0</span>
+          </button>
+          <button id="menu-btn" aria-label="Open menu" aria-expanded="false">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden items-center justify-between gap-6 pb-4 md:flex">
+        <nav class="flex items-center gap-8 text-xs font-semibold uppercase tracking-wider">
+          <a href="store.html" class="hover:text-accent">Shop</a>
+          <a href="#featured" class="hover:text-accent">New in</a>
+          <a href="#story" class="hover:text-accent">About</a>
+          <a href="#faq" class="hover:text-accent">FAQ</a>
+          <a href="#contact" class="hover:text-accent">Contact</a>
+          <a href="store.html" class="bg-accent px-5 py-2 text-paper hover:bg-ink">Shop now</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <!-- Shopping Bag Trigger -->
+          <button id="cart-btn" aria-label="Open Shopping Bag"
+                  class="relative flex items-center gap-1.5 border border-line bg-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-ink transition-colors hover:border-ink hover:text-accent">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span>Bag</span>
+            <span id="cart-badge" class="cart-badge hidden ml-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-accent px-1 text-[9px] font-bold text-paper">0</span>
+          </button>
+
+          <!-- Theme Switcher -->
+          <div class="theme-switcher" aria-label="Theme selector">
+            <button data-set-theme="default" class="theme-btn active" title="Classic Theme">Classic</button>
+            <button data-set-theme="pink" class="theme-btn" title="Pink Blush Theme">Pink</button>
+            <button data-set-theme="dark" class="theme-btn" title="Dark Noir Theme">Dark</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="hidden border-t border-line px-5 py-4 text-xs font-semibold uppercase tracking-wider md:hidden">
+      <div class="mb-3 flex items-center gap-3 pb-2">
+        <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-8 w-8 rounded-full object-cover ring-1 ring-line">
+        <span class="text-sm font-extrabold uppercase tracking-[0.25em]">Alibra</span>
+      </div>
+
+      <!-- Mobile Theme Selector -->
+      <div class="my-3 flex items-center justify-between border-y border-line py-3">
+        <span class="text-[11px] font-bold uppercase text-muted">Theme:</span>
+        <div class="theme-switcher">
+          <button data-set-theme="default" class="theme-btn active">Classic</button>
+          <button data-set-theme="pink" class="theme-btn">Pink</button>
+          <button data-set-theme="dark" class="theme-btn">Dark</button>
+        </div>
+      </div>
+
+      <a href="store.html" class="block py-3">Shop</a>
+      <a href="#featured" class="block py-3">New in</a>
+      <a href="#story" class="block py-3">About</a>
+      <a href="#faq" class="block py-3">FAQ</a>
+      <a href="#contact" class="block py-3">Contact</a>
+      <a href="store.html" class="mt-2 block bg-accent py-3 text-center text-paper">Shop now</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="relative">
+      <img src="images/pexels-rachel-claire-5531551.jpg" alt="Alibra clothing and shoes"
+           class="h-[70vh] min-h-[420px] w-full bg-gray-dark object-cover">
+      <div class="absolute inset-0 bg-black/45"></div>
+      <div class="absolute inset-0 mx-auto flex max-w-6xl items-center px-5">
+        <div class="text-paper">
+          <div class="mb-4 flex items-center gap-3">
+            <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-12 w-12 rounded-full object-cover ring-1 ring-white/60">
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-paper/90">Alibra</span>
+          </div>
+          <h1 class="text-4xl font-extrabold uppercase leading-tight md:text-6xl">Dressed to be<br>remembered</h1>
+          <p class="mt-4 max-w-sm text-base md:text-lg">Premium clothing and footwear, delivered across Kenya.</p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="store.html" class="bg-accent px-8 py-3 text-xs font-semibold uppercase tracking-wider hover:bg-paper hover:text-ink">Shop now</a>
+            <a href="store.html#footwear" class="border border-paper px-8 py-3 text-xs font-semibold uppercase tracking-wider hover:bg-paper hover:text-ink">Shop shoes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories" class="mx-auto max-w-6xl px-5 py-14">
+      <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Shop by category</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <a href="store.html#women" class="group block">
+          <div class="grid aspect-[4/3] grid-cols-2 gap-1 overflow-hidden bg-gray-light">
+            <img src="images/engin_akyurt-jacket-4792225.jpg" alt="Textured black and gray jacket" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+            <img src="images/download%20(1).webp" alt="Black leather jacket" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+          </div>
+          <p class="mt-3 text-xl font-bold uppercase group-hover:text-accent">Clothing</p>
+        </a>
+        <a href="store.html#footwear" class="group block">
+          <div class="grid aspect-[4/3] grid-cols-6 grid-rows-2 gap-1 overflow-hidden bg-gray-light">
+            <img src="images/shopping.webp" alt="Black and white sneaker" class="col-span-2 h-full w-full bg-white object-contain transition-transform duration-300 group-hover:scale-105">
+            <img src="images/download.webp" alt="Red and black sneaker" class="col-span-2 h-full w-full bg-white object-contain transition-transform duration-300 group-hover:scale-105">
+            <img src="images/deanmoth-tennis-7968714.svg" alt="Tennis shoe" class="col-span-2 h-full w-full bg-white object-contain transition-transform duration-300 group-hover:scale-105">
+            <img src="images/anaterate-rubber-boots-2547214_1920.png" alt="Black rubber boots" class="col-span-3 h-full w-full bg-white object-contain transition-transform duration-300 group-hover:scale-105">
+            <img src="images/pexels-mahsima-10827097.jpg" alt="Black high-heel shoes" class="col-span-3 h-full w-full bg-white object-contain transition-transform duration-300 group-hover:scale-105">
+          </div>
+          <p class="mt-3 text-xl font-bold uppercase group-hover:text-accent">Shoes</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section id="featured" class="bg-soft py-14">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="flex items-end justify-between">
+          <h2 class="text-2xl font-extrabold uppercase md:text-3xl">New in</h2>
+          <a href="store.html" class="text-xs font-semibold uppercase tracking-wider underline underline-offset-4 hover:text-accent">See the full store</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3">
+          <a href="store.html#women" class="product-card group flex flex-col justify-between"
+             data-name="Burgundy Ribbed Midi Dress" data-price="KES 3,200" data-img="images/download%20(3).webp" data-category="clothing">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/download%20(3).webp" alt="Burgundy Ribbed Midi Dress" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Burgundy Ribbed Midi Dress</p>
+              <p class="text-sm text-muted">KES 3,200</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#footwear" class="product-card group flex flex-col justify-between"
+             data-name="Minimalist White Runners" data-price="KES 4,500" data-img="images/images.jpg" data-category="shoes">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images.jpg" alt="Minimalist White Runners" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Minimalist White Runners</p>
+              <p class="text-sm text-muted">KES 4,500</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#women" class="product-card group flex flex-col justify-between"
+             data-name="Chocolate Textured Jumpsuit" data-price="KES 3,500" data-img="images/download%20(2).webp" data-category="clothing">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/download%20(2).webp" alt="Chocolate Textured Jumpsuit" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Chocolate Textured Jumpsuit</p>
+              <p class="text-sm text-muted">KES 3,500</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#footwear" class="product-card group flex flex-col justify-between"
+             data-name="Retro Cream & Suede Low-Tops" data-price="KES 3,800" data-img="images/images%20(1).jpg" data-category="shoes">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(1).jpg" alt="Retro Cream & Suede Low-Tops" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Retro Cream & Suede Low-Tops</p>
+              <p class="text-sm text-muted">KES 3,800</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#women" class="product-card group flex flex-col justify-between"
+             data-name="Fuchsia Twist-Waist Midi Dress" data-price="KES 2,950" data-img="images/download%20(4).webp" data-category="clothing">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/download%20(4).webp" alt="Fuchsia Twist-Waist Midi Dress" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Fuchsia Twist-Waist Midi Dress</p>
+              <p class="text-sm text-muted">KES 2,950</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#footwear" class="product-card group flex flex-col justify-between"
+             data-name="Heritage Tricolor Street Runners" data-price="KES 4,200" data-img="images/images%20(2).jpg" data-category="shoes">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(2).jpg" alt="Heritage Tricolor Street Runners" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Heritage Tricolor Street Runners</p>
+              <p class="text-sm text-muted">KES 4,200</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#women" class="product-card group flex flex-col justify-between"
+             data-name="Terracotta Belted Shirt Dress" data-price="KES 3,400" data-img="images/images%20(5).jpg" data-category="clothing">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(5).jpg" alt="Terracotta Belted Shirt Dress" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Terracotta Belted Shirt Dress</p>
+              <p class="text-sm text-muted">KES 3,400</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#footwear" class="product-card group flex flex-col justify-between"
+             data-name="Crimson Canvas Low-Tops" data-price="KES 2,800" data-img="images/images%20(3).jpg" data-category="shoes">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(3).jpg" alt="Crimson Canvas Low-Tops" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Crimson Canvas Low-Tops</p>
+              <p class="text-sm text-muted">KES 2,800</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+          <a href="store.html#footwear" class="product-card group flex flex-col justify-between"
+             data-name="Navy Sport Runner Sneakers" data-price="KES 3,600" data-img="images/images%20(4).jpg" data-category="shoes">
+            <div>
+              <div class="aspect-[3/4] w-full overflow-hidden bg-gray-light">
+                <img src="images/images%20(4).jpg" alt="Navy Sport Runner Sneakers" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <p class="mt-3 text-sm font-semibold group-hover:text-accent">Navy Sport Runner Sneakers</p>
+              <p class="text-sm text-muted">KES 3,600</p>
+            </div>
+            <span class="mt-4 block w-full bg-accent py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-paper transition-colors group-hover:bg-ink">View in store</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ALIBRA -->
+    <section id="why" class="grid md:grid-cols-4">
+      <div class="bg-gray-light px-6 py-10">
+        <h3 class="text-sm font-bold uppercase">Authentic pieces</h3>
+        <p class="mt-2 text-sm">Every item is checked for quality before it ships.</p>
+      </div>
+      <div class="bg-accent px-6 py-10 text-paper">
+        <h3 class="text-sm font-bold uppercase">Careful delivery</h3>
+        <p class="mt-2 text-sm">Packed with care and delivered across Kenya.</p>
+      </div>
+      <div class="bg-gray-dark px-6 py-10 text-paper">
+        <h3 class="text-sm font-bold uppercase">Easy payment</h3>
+        <p class="mt-2 text-sm">Pay by M-Pesa or card at checkout.</p>
+      </div>
+      <div class="bg-ink px-6 py-10 text-paper">
+        <h3 class="text-sm font-bold uppercase">Exchanges</h3>
+        <p class="mt-2 text-sm">Wrong size? Hassle-free exchanges within 7 days.</p>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-2">
+      <img src="images/pexels-sarah-o-shea-98049248-30021734.jpg" alt="About Alibra" class="aspect-[4/3] w-full bg-gray-light object-cover">
+      <div>
+        <div class="mb-4 flex items-center gap-3">
+          <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-12 w-12 rounded-full object-cover ring-1 ring-line">
+          <span class="text-sm font-bold uppercase tracking-[0.25em] text-ink">Alibra</span>
+        </div>
+        <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Made to last, chosen with care</h2>
+        <p class="mt-5 max-w-md text-muted">At Alibra, we curate timeless apparel and contemporary footwear designed for versatility, comfort, and effortless confidence. Every piece in our collection is handpicked to ensure you stand out with enduring quality.</p>
+        <a href="store.html" class="mt-7 inline-block border border-ink px-8 py-3 text-xs font-semibold uppercase tracking-wider hover:bg-ink hover:text-paper">Visit the store</a>
+      </div>
+    </section>
+
+    <!-- REVIEWS (use real reviews only) -->
+    <section id="reviews" class="bg-soft py-14">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="text-2xl font-extrabold uppercase md:text-3xl">What customers say</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <figure class="border border-line bg-paper p-6">
+            <blockquote class="text-sm leading-relaxed">"The quality of the footwear exceeded my expectations. Delivered the same day in Nairobi, perfectly packaged!"</blockquote>
+            <figcaption class="mt-4 text-sm font-semibold">Sharon K., Nairobi</figcaption>
+          </figure>
+          <figure class="border border-line bg-paper p-6">
+            <blockquote class="text-sm leading-relaxed">"Love my dress! Fits like a glove and the fabric is premium. Customer service on WhatsApp was super responsive."</blockquote>
+            <figcaption class="mt-4 text-sm font-semibold">Brenda M., Westlands</figcaption>
+          </figure>
+          <figure class="border border-line bg-paper p-6">
+            <blockquote class="text-sm leading-relaxed">"Authentic pieces and smooth M-Pesa checkout. Exchanged a shoe size in under 48 hours without any hassle."</blockquote>
+            <figcaption class="mt-4 text-sm font-semibold">Kevin O., Kilimani</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER BANNER -->
+    <section id="offer" class="bg-accent py-12 text-paper">
+      <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-5 px-5 md:flex-row md:items-center">
+        <div class="flex items-center gap-4">
+          <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-12 w-12 rounded-full object-cover ring-1 ring-white/50 bg-paper/10">
+          <p class="text-xl font-bold uppercase md:text-2xl">Book your order on WhatsApp</p>
+        </div>
+        <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Alibra%2C%20I%27d%20like%20to%20place%20an%20order"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-paper px-8 py-3 text-xs font-semibold uppercase tracking-wider text-ink hover:bg-ink hover:text-paper">Book on WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mx-auto max-w-3xl px-5 py-14">
+      <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Questions</h2>
+      <div class="mt-8 divide-y divide-line border-y border-line">
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none justify-between text-sm font-semibold">Where do you deliver?<span class="group-open:hidden">+</span><span class="hidden group-open:inline">&minus;</span></summary>
+          <p class="mt-3 text-sm text-muted">We deliver across Kenya. Same-day delivery is available within Nairobi, and express delivery takes 24–48 hours for all other towns and counties.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none justify-between text-sm font-semibold">How can I pay?<span class="group-open:hidden">+</span><span class="hidden group-open:inline">&minus;</span></summary>
+          <p class="mt-3 text-sm text-muted">We accept Lipa na M-Pesa (Till / Paybill) as well as Visa and Mastercard debit or credit cards.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none justify-between text-sm font-semibold">Are the items authentic?<span class="group-open:hidden">+</span><span class="hidden group-open:inline">&minus;</span></summary>
+          <p class="mt-3 text-sm text-muted">Yes, 100%. Every piece of clothing and pair of footwear is individually inspected for material quality, stitching, and finish before dispatch.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none justify-between text-sm font-semibold">Can I exchange an item?<span class="group-open:hidden">+</span><span class="hidden group-open:inline">&minus;</span></summary>
+          <p class="mt-3 text-sm text-muted">Yes! If you need a size exchange or different fit, notify us via WhatsApp within 7 days of delivery. Items must be unworn and in original condition.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-soft py-14">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="text-2xl font-extrabold uppercase md:text-3xl">Get in touch</h2>
+        <p class="mt-3 max-w-xl text-sm text-muted">Questions about an item or ready to place an order? Contact us and we’ll be happy to help.</p>
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Alibra%2C%20I%27d%20like%20to%20ask%20about%20an%20item"
+             target="_blank" rel="noopener noreferrer"
+             class="border border-line bg-paper p-6 transition-colors hover:border-accent">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366]/10 text-[#128C7E]">
+                <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .14 5.36.14 11.94c0 2.1.55 4.15 1.6 5.96L.04 24l6.25-1.64a11.93 11.93 0 0 0 5.78 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.87 9.87 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.45 9.9-9.92 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+              </span>
+              <h3 class="text-sm font-bold uppercase">WhatsApp</h3>
+            </div>
+            <p class="mt-2 text-sm text-muted">Chat with us about products and orders.</p>
+            <span class="mt-4 inline-block text-xs font-semibold uppercase tracking-wider text-accent">Message us</span>
+          </a>
+          <a href="mailto:hello@alibra.co.ke" class="border border-line bg-paper p-6 transition-colors hover:border-accent">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-accent/10 text-accent">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <h3 class="text-sm font-bold uppercase">Email</h3>
+            </div>
+            <p class="mt-2 text-sm text-muted">hello@alibra.co.ke</p>
+            <span class="mt-4 inline-block text-xs font-semibold uppercase tracking-wider text-accent">Send an email</span>
+          </a>
+          <a href="https://www.instagram.com/alibra_collections/" target="_blank" rel="noopener noreferrer"
+             class="border border-line bg-paper p-6 transition-colors hover:border-accent">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#feda75]/25 via-[#d62976]/15 to-[#4f5bd5]/20 text-[#c13584]">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <h3 class="text-sm font-bold uppercase">Instagram</h3>
+            </div>
+            <p class="mt-2 text-sm text-muted">@alibra_collections</p>
+            <span class="mt-4 inline-block text-xs font-semibold uppercase tracking-wider text-accent">Follow us</span>
+          </a>
+          <a href="https://www.tiktok.com/@alibracollections" target="_blank" rel="noopener noreferrer"
+             class="border border-line bg-paper p-6 transition-colors hover:border-accent">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-paper">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.2a5.2 5.2 0 0 1-3.2-4.4V1h-3.7v15.3a3.1 3.1 0 1 1-2.7-3.1v-3.8a7 7 0 1 0 6.4 6.9V8.5a8.8 8.8 0 0 0 5.1 1.6V6.4a5.3 5.3 0 0 1-1.9-.2Z"/></svg>
+              </span>
+              <h3 class="text-sm font-bold uppercase">TikTok</h3>
+            </div>
+            <p class="mt-2 text-sm text-muted">@alibracollections</p>
+            <span class="mt-4 inline-block text-xs font-semibold uppercase tracking-wider text-accent">Follow us</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-gray-dark text-paper">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="images/brand/images%20(4).jpg" alt="Alibra logo" class="h-10 w-10 rounded-full object-cover ring-1 ring-white/20">
+          <p class="text-xl font-extrabold uppercase tracking-[0.3em]">Alibra</p>
+        </div>
+        <p class="mt-3 max-w-xs text-sm text-gray-light">Premium clothing and footwear, delivered across Kenya.</p>
+      </div>
+      <div class="text-sm">
+        <p class="font-bold uppercase">Contact</p>
+        <p class="mt-3 text-gray-light">WhatsApp: +254 XXX XXX XXX</p>
+        <p class="text-gray-light">hello@alibra.co.ke</p>
+      </div>
+      <div class="text-sm">
+        <p class="font-bold uppercase">Follow</p>
+        <a href="https://www.instagram.com/alibra_collections/" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center gap-2 text-gray-light hover:text-paper">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.tiktok.com/@alibracollections" target="_blank" rel="noopener noreferrer" class="mt-2 flex items-center gap-2 text-gray-light hover:text-paper">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.2a5.2 5.2 0 0 1-3.2-4.4V1h-3.7v15.3a3.1 3.1 0 1 1-2.7-3.1v-3.8a7 7 0 1 0 6.4 6.9V8.5a8.8 8.8 0 0 0 5.1 1.6V6.4a5.3 5.3 0 0 1-1.9-.2Z"/></svg>
+          TikTok
+        </a>
+        <a href="store.html" class="mt-4 inline-block bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-wider hover:bg-paper hover:text-ink">Visit the store</a>
+      </div>
+    </div>
+    <p class="border-t border-white/15 py-5 text-center text-xs text-gray-light">&copy; 2026 Alibra. All rights reserved.</p>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="whatsapp-btn" href="https://wa.me/254XXXXXXXXX?text=Hello%20Alibra%2C%20I%27d%20like%20to%20ask%20about%20an%20item"
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+     class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white">
+    <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .14 5.36.14 11.94c0 2.1.55 4.15 1.6 5.96L.04 24l6.25-1.64a11.93 11.93 0 0 0 5.78 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.87 9.87 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.45 9.9-9.92 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
+    </svg>
+  </a>
+
+  <!-- CHATBOT: add the widget container or embed script here later -->
+  <div id="chatbot"></div>
+
+</body>
+</html>
